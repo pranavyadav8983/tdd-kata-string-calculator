@@ -25,10 +25,20 @@ public class StringCalculatorTest {
 		int actual=sc.Add(inputString);
 		assertEquals(expected, actual);
 	}
+	
 	@Test
 	public void twoNumbersTest() {
 		String inputString="2,3";
 		int expected=5;
+		StringCalculator sc= new StringCalculator();
+		int actual=sc.Add(inputString);
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void unknownAmountOfNumbersTest() {
+		String inputString="2,3,7,2,5,1";
+		int expected=20;
 		StringCalculator sc= new StringCalculator();
 		int actual=sc.Add(inputString);
 		assertEquals(expected, actual);
