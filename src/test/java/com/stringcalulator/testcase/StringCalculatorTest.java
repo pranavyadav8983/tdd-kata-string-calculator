@@ -25,5 +25,13 @@ public class StringCalculatorTest {
 		int actual=sc.Add(inputString);
 		assertEquals(expected, actual);
 	}
+	@Test
+	public void twoNumbersTest() {
+		String inputString="2,3";
+		int expected=5;
+		StringCalculator sc= new StringCalculator();
+		int actual=sc.Add(inputString);
+		assertEquals(expected, actual);
+	}
 
 }
