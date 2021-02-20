@@ -44,4 +44,13 @@ public class StringCalculatorTest {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void stringWithNewLinesTest() {
+		String inputString="2\n,3,7,2,5,1";
+		int expected=20;
+		StringCalculator sc= new StringCalculator();
+		int actual=sc.Add(inputString);
+		assertEquals(expected, actual);
+	}
+
 }
