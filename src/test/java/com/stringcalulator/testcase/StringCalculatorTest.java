@@ -17,4 +17,13 @@ public class StringCalculatorTest {
 		assertEquals(expected, actual);
 	}
 	
+	@Test
+	public void onlyOneNumberTest() {
+		String inputString="3";
+		int expected=3;
+		StringCalculator sc= new StringCalculator();
+		int actual=sc.Add(inputString);
+		assertEquals(expected, actual);
+	}
+
 }
