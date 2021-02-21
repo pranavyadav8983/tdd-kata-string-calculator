@@ -63,4 +63,11 @@ public class StringCalculatorTest {
 		String inputString = "//;\n1;2;-3;-2";
 		int actual = sc.Add(inputString);
 	}
+
+	@Test
+	public void GetCalledCountTest() {
+		int expected = 5;
+		int actual = sc.GetCalledCount();
+		assertEquals(expected, actual);
+	}
 }

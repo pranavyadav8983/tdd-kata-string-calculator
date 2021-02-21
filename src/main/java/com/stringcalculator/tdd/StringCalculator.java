@@ -35,4 +35,9 @@ public class StringCalculator {
 		return sum;
 	}
 
+	 public int GetCalledCount()
+	 {
+		 return 0;
+	 }
+
 }
