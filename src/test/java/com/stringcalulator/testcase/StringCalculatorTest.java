@@ -66,7 +66,7 @@ public class StringCalculatorTest {
 
 	@Test
 	public void getCalledCountTest() {
-		int expected = 6;
+		int expected = 7;
 		int actual = sc.GetCalledCount();
 		assertEquals(expected, actual);
 	}
@@ -75,6 +75,14 @@ public class StringCalculatorTest {
 	public void largerNumbersTest() throws NegativeNumberException {
 		String inputString = "2\n3,7,2\n5,1,1002";
 		int expected = 20;
+		int actual = sc.Add(inputString);
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void delimeterWithMultiCharactersTest() throws NegativeNumberException {
+		String inputString = "//[***]\n1***2***3";
+		int expected = 6;
 		int actual = sc.Add(inputString);
 		assertEquals(expected, actual);
 	}
