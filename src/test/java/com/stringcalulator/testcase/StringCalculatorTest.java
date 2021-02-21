@@ -66,7 +66,7 @@ public class StringCalculatorTest {
 
 	@Test
 	public void GetCalledCountTest() {
-		int expected = 5;
+		int expected =7;
 		int actual = sc.GetCalledCount();
 		assertEquals(expected, actual);
 	}

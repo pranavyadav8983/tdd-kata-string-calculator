@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringCalculator {
+	public static int count=0;
 	public int Add(String numbers) throws NegativeNumberException {
+		count++;
 		int sum = 0;
 		String delimeter = ",|\n";
 		List<Integer> negativeNumbers = null;
@@ -37,7 +39,7 @@ public class StringCalculator {
 
 	 public int GetCalledCount()
 	 {
-		 return 0;
+		 return count;
 	 }
 
 }
