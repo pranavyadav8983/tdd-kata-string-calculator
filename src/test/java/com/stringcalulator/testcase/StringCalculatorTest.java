@@ -65,9 +65,17 @@ public class StringCalculatorTest {
 	}
 
 	@Test
-	public void GetCalledCountTest() {
-		int expected =7;
+	public void getCalledCountTest() {
+		int expected = 7;
 		int actual = sc.GetCalledCount();
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void largerNumbersTest() throws NegativeNumberException {
+		String inputString = "2\n3,7,2\n5,1,1002";
+		int expected = 20;
+		int actual = sc.Add(inputString);
 		assertEquals(expected, actual);
 	}
 }
