@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringCalculator {
-	public static int count=0;
+	public static int count = 0;
+
 	public int Add(String numbers) throws NegativeNumberException {
 		count++;
 		int sum = 0;
@@ -24,7 +25,7 @@ public class StringCalculator {
 			for (String number : stringArray) {
 				if (!number.isEmpty()) {
 					int num = Integer.parseInt(number);
-					sum = sum + num;
+					sum = num < 1000 ? (sum + num) : sum;
 					if (num < 0) {
 						negativeNumbers.add(num);
 					}
@@ -37,9 +38,8 @@ public class StringCalculator {
 		return sum;
 	}
 
-	 public int GetCalledCount()
-	 {
-		 return count;
-	 }
+	public int GetCalledCount() {
+		return count;
+	}
 
 }
