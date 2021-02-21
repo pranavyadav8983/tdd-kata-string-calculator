@@ -66,7 +66,7 @@ public class StringCalculatorTest {
 
 	@Test
 	public void getCalledCountTest() {
-		int expected = 7;
+		int expected = 8;
 		int actual = sc.GetCalledCount();
 		assertEquals(expected, actual);
 	}
@@ -83,6 +83,21 @@ public class StringCalculatorTest {
 	public void delimeterWithMultiCharactersTest() throws NegativeNumberException {
 		String inputString = "//[***]\n1***2***3";
 		int expected = 6;
+		int actual = sc.Add(inputString);
+		assertEquals(expected, actual);
+	}
+	@Test
+	public void multipleDelimetesrWithSingleCharacterTest() throws NegativeNumberException {
+		String inputString = "//[*][%]\n1*2%3";
+		int expected = 8;
+		int actual = sc.Add(inputString);
+		assertEquals(expected, actual);
+	}
+
+	@Test
+	public void multipleDelimetesrWithMultipleCharactersTest() throws NegativeNumberException {
+		String inputString = "//[**][%%]\n1**2%%3";
+		int expected = 8;
 		int actual = sc.Add(inputString);
 		assertEquals(expected, actual);
 	}
