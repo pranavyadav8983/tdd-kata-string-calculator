@@ -2,6 +2,8 @@ package com.stringcalculator.tdd;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
 	public static int count = 0;
@@ -9,14 +11,33 @@ public class StringCalculator {
 	public int Add(String numbers) throws NegativeNumberException {
 		count++;
 		int sum = 0;
-		String delimeter = ",|\n";
+		String delimeter = "";
 		List<Integer> negativeNumbers = null;
+		StringBuilder sb = new StringBuilder();
+		sb.append(",|\\n");
 
 		if (numbers.contains("//")) {
-			delimeter = "\\" + numbers.substring(2, 3) + "|" + delimeter;
-			numbers = numbers.substring(3, numbers.length());
-		}
+			int end = 3;
+			Pattern pattern = Pattern.compile("\\[(.*?)\\]");
+			Matcher matcher = pattern.matcher(numbers);
+			if (!matcher.find()) {
+				sb.append("|");
+				sb.append(numbers.charAt(2));
+			}
+			matcher.reset();
+			while (matcher.find()) {
+				sb.append("|");
+				char arr[] = matcher.group(1).toCharArray();
+				for (char c : arr) {
+					sb.append("\\");
+					sb.append(c);
+				}
+				end = matcher.end();
+			}
 
+			numbers = numbers.substring(end, numbers.length());
+		}
+		delimeter = sb.toString();
 		String stringArray[] = numbers.split(delimeter);
 		if (numbers.isEmpty()) {
 			sum = 0;
