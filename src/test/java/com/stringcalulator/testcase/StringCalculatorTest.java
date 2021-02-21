@@ -89,7 +89,7 @@ public class StringCalculatorTest {
 	@Test
 	public void multipleDelimetesrWithSingleCharacterTest() throws NegativeNumberException {
 		String inputString = "//[*][%]\n1*2%3";
-		int expected = 8;
+		int expected = 6;
 		int actual = sc.Add(inputString);
 		assertEquals(expected, actual);
 	}
@@ -97,7 +97,7 @@ public class StringCalculatorTest {
 	@Test
 	public void multipleDelimetesrWithMultipleCharactersTest() throws NegativeNumberException {
 		String inputString = "//[**][%%]\n1**2%%3";
-		int expected = 8;
+		int expected = 6;
 		int actual = sc.Add(inputString);
 		assertEquals(expected, actual);
 	}

@@ -2,11 +2,25 @@ package com.stringcalculator.tdd;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringCalculator {
 	public static int count = 0;
+
+	public static void main(String[] args) {
+		String input = "";
+		StringCalculator stringCalc = new StringCalculator();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Please provide input string");
+		input = sc.nextLine();
+		try {
+			System.out.println("sum=" + stringCalc.Add(input));
+		} catch (NegativeNumberException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public int Add(String numbers) throws NegativeNumberException {
 		count++;
